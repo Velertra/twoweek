@@ -1,0 +1,1 @@
+(()=>{async function o(o){const t=await fetch("https://fortnite-api.com/v2/stats/br/v2?name="+o+"&accountType=epic",{method}),c=await t.json();console.log(c)}console.log("string"),o("M_Mcflyyy"),o("shaepods")})();
