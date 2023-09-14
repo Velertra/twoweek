@@ -1,1 +1,1 @@
-(()=>{async function o(o){const t=await fetch("https://fortnite-api.com/v2/stats/br/v2?name="+o+"&accountType=epic",{method}),c=await t.json();console.log(c)}console.log("string"),o("M_Mcflyyy"),o("shaepods")})();
+(()=>{let t='"95a7c31c-d6f2-447e-a447-e85477885220"';console.log(t),async function(o){const a=await fetch("http://fortnite-api.com/v2/stats/br/v2?name=M_Mcflyyy&accountType=epic",{method:"GET",headers:{Authorization:t}}),c=await a.json();console.log(c)}()})();

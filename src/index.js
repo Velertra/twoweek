@@ -1,14 +1,15 @@
  //import * as dotenv from dotenv;
-/*console.log(OPENAI_API_KEY) *//* */
+/*console.log(FORTNITE_API_KEY) *//* */
 //import 'dotenv/config' 
 
-//import OPENAI_API_KEY from 'dotenv';
+//import FORTNITE_API_KEY from 'dotenv';
 //require('dotenv').config()
-console.log(typeof process.env.OPENAI_API_KEY)
+//console.log(typeof process.env.FORTNITE_API_KEY)
+
 //dotenv.config();
 //import dotenv as dotenv;
-/* console.log(process.env.OPENAI_API_KEY)
-console.log(OPENAI_API_KEY) */
+/* console.log(process.env.FORTNITE_API_KEY)
+console.log(FORTNITE_API_KEY) */
 
 /* const { container } = require("webpack");
 
@@ -81,16 +82,21 @@ fetch(fullUrl, { headers })
         }
     } */
 
-
+    let justChecking = process.env.FORTNITE_API_KEY;
+    console.log(justChecking)
 
     async function getPlayerStats(player){
-        const response = await fetch ("https://fortnite-api.com/v2/stats/br/v2?name=" + player + "&accountType=epic", {
-            method
+        const response = await fetch ("http://fortnite-api.com/v2/stats/br/v2?name=" + player + "&accountType=epic", {
+            method: "GET",
+            headers: {
+                'Authorization': justChecking,  
+            }
         });
+
         const playerStats = await response.json();
         console.log(playerStats);
 
     }
 
     getPlayerStats('M_Mcflyyy')
-    getPlayerStats('shaepods')
+    //getPlayerStats('shaepods')
