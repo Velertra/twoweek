@@ -2,21 +2,39 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
-
 module.exports = {
-  entry: './src/index.js', 
+  entry: './src/index.js',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'), 
+    path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
     fallback: {
       fs: require.resolve('path-browserify'),
-      path: require.resolve('path-browserify')
+      path: require.resolve('path-browserify'),
     },
+    alias: {
+      react: 'react',
+    'react-dom': 'react-dom',
+    }, 
   },
-   plugins: [
-    new Dotenv(),
-  ],
-
+  module: {
+    rules: [
+      {
+        test: /\.(?:js|mjs|cjs)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ["@babel/preset-env", { targets: "defaults" }],
+              "@babel/preset-react" // If you're using React
+            ],
+            plugins: ["@babel/plugin-proposal-class-properties"]
+          },
+        },
+      },
+    ],
+  },
+  plugins: [new Dotenv(), new NodePolyfillPlugin({ includeAliases: ['console'] })],
 };
