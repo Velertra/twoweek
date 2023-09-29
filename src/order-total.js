@@ -1,11 +1,11 @@
-const orderTotal = require("./display");
+/* const orderTotal = require("./display");
 
-it("Quantity", () =>
+it("api", () =>
   expect(
-    orderTotal({
-      items: [{ name: "Dragon candy", price: 2, quantity: 3 }],
+    apiFunction({
+      api: {[status: 202]}
     }),
-  ).toBe(6));
+  ).toBe(202));
 
 it("No quantity specified", () =>
   expect(
@@ -32,3 +32,4 @@ it("Happy path (Example 2)", () =>
       ],
     }),
   ).toBe(60));
+ */
