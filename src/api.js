@@ -1,4 +1,6 @@
-async function getPlayerStats(player) {
+/* eslint-disable */
+
+/* async function getPlayerStats(player) {
   const response = await fetch(
     `https://fortnite-api.com/v2/stats/br/v2?name=${player}&accountType=epic`,
     {
@@ -9,8 +11,7 @@ async function getPlayerStats(player) {
   );
   const playerStats = await response.json();
   return playerStats;
-}
-
+} */
 class DOMStats {
   constructor() {}
 
@@ -85,4 +86,3 @@ async function callPlayers() {
     }
   }
 }
-callPlayers();

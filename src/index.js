@@ -1,6 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom";
 import App from "./App.js";
+import "./js-handlers.js";
 // Import your root component
 const root = document.getElementById("root");
 
