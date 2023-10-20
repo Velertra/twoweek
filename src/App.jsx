@@ -1,32 +1,57 @@
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import getPlayerStats from './apiFunction'
+import DisplayMainPlayers from './MainPlayerStats'
 
-
-function List(props){
-  const eachStatArr = props.animalsList.map((animal) => console.log(animal));
-}
-
-function App() {
-  const [count, setCount] = useState(0)
-  const animalsList = ["M_Mcflyyy", "M_Mcflyyy", "shaepods", "stilreign"];
+export default function App() {
+  const [count, setCount] = useState(0); 
 
   return (
     <>
       <h1>Two Week Stats</h1>
-      <List animalsList={animalsList} />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
+        <DisplayMainPlayers />
       </div>
     </>
   )
 }
 
-export default App
+
+const animalsList = ["M_Mcflyyy", "M_Mcflyyy", "shaepods", "stilreign"];
+ /*  
+function CheckOnApi(){
+  const [stats, setStats] = useState([]);
+
+  useEffect(() => {
+    
+    fetch(Anotherfunction('M_Mcflyyy'))
+      .then(response => setStats(response))
+      
+    console.log(stats)
+    const tester = new AbortController();
+    return tester.fetch
+  }, [setStats])
+
+
+  return (
+    <>
+      <div>
+        <h1>you aleady know</h1>
+        {/* {stats.map(stat => {
+          return <pre>{ JSON.stringify(stat) }</pre>
+        })} 
+        {JSON.stringify(stats)}
+      </div>
+    </>
+  )
+
+}
+ */
+
 
 
 /* function List(props){
