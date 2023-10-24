@@ -21,8 +21,8 @@ export default function App() {
 }
 
 
-const animalsList = ["M_Mcflyyy", "M_Mcflyyy", "shaepods", "stilreign"];
- /*  
+//const animalsList = ["M_Mcflyyy", "M_Mcflyyy", "shaepods", "stilreign"];
+ /*
 function CheckOnApi(){
   const [stats, setStats] = useState([]);
 
@@ -70,3 +70,48 @@ function CheckOnApi(){
     </>
   );
 } */
+
+
+/* 
+    
+    
+
+    useEffect(() => {
+        let effectSwitch = true;
+        const controller = new AbortController;
+        const signal = controller.signal;
+        if (effectSwitch) {
+            const tester = async () => {
+
+                /* for (const player in animalsList) {
+                    console.log(animalsList[player])
+                } 
+                
+                const resultPromises = await animalsList.map(player => ApiFunction(player));
+                const results = await Promise.all(resultPromises);
+                
+                 
+                return results;
+            }
+   
+            
+                
+            setDisplayData((currentState) => tester())
+            
+            console.log(displayData)
+            }
+        return () => {
+            effectSwitch = false
+        };
+    },[]) 
+
+
+    return (
+        <>
+            <pre>{displayData.length < 0  ? 'yello' : JSON.stringify(displayData[0]) }</pre>
+            <h1>{ }</h1>
+           
+        </>
+) * /
+
+        const playerResult = retrievePlayerData(); */

@@ -2,50 +2,69 @@ import { useEffect, useState } from "react";
 import ApiFunction from "./ApiFunction";
 
 export default function DisplayMainPlayers() {
-    const [displayData, setDisplayData] = useState([]);
+    const [displayData, setDisplayData] = useState({
+      
+});
     const animalsList = ["M_Mcflyyy", "shaepods", "stilreign"];
     const playersData = []
 
-
-    function notSureYet(...props) {
-        
-        //for (const prop in props) {
-            console.log(props[0]);
-        //}
-    }
-
-
-
-
     useEffect(() => {
-        async function retrievePlayerData() {
-            try {
-                /* for (const player in animalsList) {
-
-                    const results = await ApiFunction(animalsList[player]);
-                    notSureYet(results.data);
-
-
-                } */
-
-
-                const resultPromises = animalsList.map(player => ApiFunction(player));
-                const results = await Promise.all(resultPromises);
-                console.log(results)
+        let useEffectSwitch = true
+        if (useEffectSwitch) {
+            async function mainPlayerData() {
+                for (const players in animalsList) {
+                    const result = await ApiFunction(animalsList[players])
+                    playersData.push(result)
+                }
             }
-            catch {
-                console.error(Error, 'This retrievePlayerData Aint working my man')
-            }
+            useEffectSwitch = false;
+            mainPlayerData();
         }
         
-    retrievePlayerData()
-    }, []) 
-            
+        setDisplayData(playersData)
+
+        return () => useEffectSwitch = false;
+    },[displayData.data])
+
+
+console.log(displayData[0].data)
 
     return (
         <>
-            <pre>{displayData.length === 0  ? 'yello' : JSON.stringify(displayData.account.name) }</pre>
-            <h1>{  }</h1>
+            <h1>such a nice day</h1>
+            <h2>{displayData ? 'title space' :title}</h2>
         </>
     )
+
 }
+
+
+
+
+/* import { useEffect, useState } from "react";
+
+export default function DisplayMainPlayers() {
+    const animalsList = ["M_Mcflyyy", "shaepods", "stilreign"];
+ 
+    useEffect(() => {
+        let useEffectSwitch = true
+        async function mainPlayerData() {
+            for (const players in animalsList) {
+                console.log('animalsList')
+            }
+        }
+        if (useEffectSwitch) {
+            mainPlayerData()
+        }
+        return () => useEffectSwitch = false;
+    });
+
+    return (
+        <>
+            <h1>such a nice day</h1>
+            <h2>{displayData ? 'title space' :title}</h2>
+        </>
+    )
+};
+ */
+

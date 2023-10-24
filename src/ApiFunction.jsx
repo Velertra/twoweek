@@ -1,3 +1,5 @@
+
+//api to call for  stats of select player, 
 export default async function getPlayerStats(player) {
   const apiKey = import.meta.env.VITE_REACT_APP_TWOWEEK_KEY;
 
@@ -15,8 +17,6 @@ export default async function getPlayerStats(player) {
     }
   }
   catch {
-    error.log(Error, "this is a no go on the api home boy")
+    //error.log(Error, "this is a no go on the api home boy")
   }
-  /* const playerStats = await response.json();
-  return playerStats */
 }
