@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import ApiFunction from "./ApiFunction";
+import ApiFunction from '../utilities/ApiFunction';
 
 export default function DisplayMainPlayers() {
-    const [displayData, setDisplayData] = useState({
-      
-});
+    const [displayData, setDisplayData] = useState({});
     const animalsList = ["M_Mcflyyy", "shaepods", "stilreign"];
     const playersData = []
 
@@ -27,7 +25,7 @@ export default function DisplayMainPlayers() {
     },[displayData.data])
 
 
-console.log(displayData[0].data)
+console.log(displayData[0])
 
     return (
         <>
@@ -68,3 +66,19 @@ export default function DisplayMainPlayers() {
 };
  */
 
+/* 
+let useEffectSwitch = true
+if (useEffectSwitch) {
+    async function mainPlayerData() {
+        for (const players in animalsList) {
+            const result = await ApiFunction(animalsList[players])
+            playersData.push(result)
+        }
+    }
+    useEffectSwitch = false;
+    mainPlayerData();
+}
+
+setDisplayData(playersData)
+
+return () => useEffectSwitch = false; */
