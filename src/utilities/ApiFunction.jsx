@@ -20,3 +20,8 @@ export default async function getPlayerStats(player) {
     //error.log(Error, "this is a no go on the api home boy")
   }
 }
+
+
+/* const CallApi = () => {
+
+} */
