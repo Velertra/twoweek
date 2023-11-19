@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import PlayerDiv from '../utilities/MainPlayers';
 import BottomDivs from '../components/StatsDisplay';
-import IconImages from './DisplayImages';
+import IconImages from '../components/DisplayImages';
+import SearchBar from '../components/SearchBar';
 
 export default function FriendStats(){
 
@@ -9,9 +10,12 @@ export default function FriendStats(){
 
     return (
         <>
+            <SearchBar />
+            <h1>Two Week Stats</h1>
             <IconImages 
-                        key={'topdivs'}
-                    />
+                key={'topdivs'}
+            />
+            <div className="bottom-stats">
             <PlayerDiv
                 players={animalsList}
                 renderPlayer={(playerData, index) => (
@@ -19,8 +23,10 @@ export default function FriendStats(){
                         key={index}
                         stats={playerData}
                     />
+                    
                 )}
             />
+            </div>
         
         </>
     )

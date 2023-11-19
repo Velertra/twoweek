@@ -1,23 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import '../src/styles/App.css'
-import FriendDiv from './components/FriendPlayersPage'
-import SearchBar from './components/SearchBar'
-import ProfileStats from './components/DisplaySearched'
+import FriendDiv from './pages/FriendPlayersPage'
+import { Link } from 'react-router-dom'
 
 export default function App() {
-  
   return (
     <>
-      <SearchBar />
-      <h1>Two Week Stats</h1>
-      <div className="bottom-stats">
-        <FriendDiv />
-      </div>
-      <div className="profile-pop-up">
-        {/* <ProfileStats 
-
-        /> */}
-      </div>
+      <nav>
+        <Link to="fullstats">Full Stats</Link>
+      </nav>
+      <nav>
+        <Link to="anotherpage">another Page</Link>
+      </nav>
+      <FriendDiv />
+      
     </>
   )
 }

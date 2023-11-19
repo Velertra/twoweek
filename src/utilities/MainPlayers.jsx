@@ -22,7 +22,7 @@ export default function FriendStats({ renderPlayer, players }) {
   }, [currentPlayer]);
 
   //delay for array
-  useEffect(() => {
+/*   useEffect(() => {
     const timer = setTimeout(() => {
       if (currentPlayer < players.length) {
         setcurrentPlayer(currentPlayer + 1);
@@ -30,8 +30,10 @@ export default function FriendStats({ renderPlayer, players }) {
     }, 2000);
 
     return () => clearTimeout(timer);
-  }, [currentPlayer]);
+  }, [currentPlayer]); */
 
+
+  
   return (
     <>
       {data.map((playerData, index) => (

@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import DisplayPlayer from './DisplaySearched';
 import StatsDisplay from './StatsDisplay';
-import PlayerDiv from '../utilities/MainPlayers'
 import ApiFunction from '../utilities/ApiFunction'
 
 const SearchBar = () => {
@@ -9,22 +7,16 @@ const SearchBar = () => {
     const [showDiv, setShowDiv] = useState(false);
     const [playerData, setPlayerData] = useState([]);
 
-
     function handleChange(e){
-        setText(e.target.value)
-        
-    }
-
-    function handleCloseDiv(){
-        setShowDiv(false)
+        setText(e.target.value);
     }
 
     async function handleKeyDown(e){
         if(e.key === 'Enter'){
             const playerResults = await ApiFunction(text);
-            setPlayerData(playerResults.data)
-            setShowDiv(true)
-            setText('')
+            setPlayerData(playerResults.data);
+            setShowDiv(true);
+            setText('');
         }
     }
     
@@ -37,7 +29,7 @@ const SearchBar = () => {
                 onKeyDown={handleKeyDown}
             />
             <div>
-                {showDiv /* && playerData.length > 0  */ ? (
+                {showDiv ? (
                     <div>
                         <StatsDisplay 
                             stats={playerData}

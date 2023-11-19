@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-//import PlayerDiv from '../components/PlayerComponent'
 import PlayersNewDiv from '../utilities/MainPlayers'
 
 export default function DivsWithTheStats({stats}){
