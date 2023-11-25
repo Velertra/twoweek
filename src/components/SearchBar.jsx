@@ -6,17 +6,23 @@ const SearchBar = () => {
     const [text, setText] = useState('');
     const [showDiv, setShowDiv] = useState(false);
     const [playerData, setPlayerData] = useState([]);
+    const [searchStatus, setSearchStatus] = useState(true)
 
     function handleChange(e){
         setText(e.target.value);
     }
 
     async function handleKeyDown(e){
-        if(e.key === 'Enter'){
-            const playerResults = await ApiFunction(text);
-            setPlayerData(playerResults.data);
-            setShowDiv(true);
-            setText('');
+        try {
+            if(e.key === 'Enter'){
+                const playerResults = await ApiFunction(text);
+                setPlayerData(playerResults.data);
+                setSearchStatus(false);
+                setShowDiv(true);
+                setText('');
+            }
+        } catch(error){
+            setSearchStatus(true)
         }
     }
     
@@ -33,6 +39,7 @@ const SearchBar = () => {
                     <div>
                         <StatsDisplay 
                             stats={playerData}
+                            searchStatus={searchStatus}
                         />
                         <button onClick={(() => setShowDiv(false))}>close</button>
                     </div>
