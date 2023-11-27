@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import FriendDiv from './pages/FriendPlayersPage'
+import FriendDiv from './pages/MainPage'
 import { Link } from 'react-router-dom'
 
 export default function App() {

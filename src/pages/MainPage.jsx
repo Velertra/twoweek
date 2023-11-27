@@ -1,22 +1,20 @@
 import { useState, useEffect } from 'react';
 import PlayerDiv from '../utilities/MainPlayers';
 import BottomDivs from '../components/StatsDisplay';
-import IconImages from '../components/DisplayImages';
-import SearchBar from '../components/SearchBar';
+import ImageComponent from '../components/ImageComponent';
+import FriendStats from '../components/FriendStats'
 
-export default function FriendStats(){
+export default function MainPage(){
 
     const animalsList = ["M_Mcflyyy", "shaepods", "stilreign", "buckwildhobbit"];
 
     return (
         <>
-            <SearchBar />
-            <h1>Two Week Stats</h1>
-            <IconImages 
-                key={'topdivs'}
-            />
             <div className="bottom-stats">
-            <PlayerDiv
+                <FriendStats
+                    selectedPlayer="M_Mcflyyy"
+                />
+            {/* <PlayerDiv
                 players={animalsList}
                 renderPlayer={(playerData, index) => (
                     <BottomDivs
@@ -25,9 +23,8 @@ export default function FriendStats(){
                     />
                     
                 )}
-            />
+            /> */}
             </div>
-        
         </>
     )
 }
