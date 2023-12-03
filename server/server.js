@@ -6,7 +6,7 @@ const messagesRoute = require('./routes/messageRoute');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-
+mongoose.set("strictQuery", false);
 mongoose.connect('mongodb+srv://Velerta43:aklGXZWUEJ33BNwS@chat.6qge1bw.mongodb.net/?retryWrites=true&w=majority');
 
 const db = mongoose.connection;
