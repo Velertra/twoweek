@@ -1,8 +1,23 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Certainly! Here's the updated README with the correct instructions:
 
-Currently, two official plugins are available:
+TwoWeek (Game Data) README
+Project Overview
+TwoWeek (Game Data) is a web application that displays players statistics from a video game. Users can easily look up any player to view their in-game stats. Additionally, there is an ongoing feature development to include a mini chat box for visitors to leave messages.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Installation
+
+run in client side:
+
+"npm install"
+
+This command will automatically download and install the necessary packages for your project.
+
+then run: 
+
+"npm run dev"
+
+
+To start the development server, run the following command on server side:
+
+npm run devstart
