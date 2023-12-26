@@ -5,7 +5,7 @@ export default function IconImages({stats}){
             <div className={'trophy-case'}>
                 <img
                     src="/images/1BE513043_bg.png"
-                    alt="mancakeboy"
+                    alt="mancakeman"
                 />
                 <img
                     src="/images/AE8A13020_bg.png"

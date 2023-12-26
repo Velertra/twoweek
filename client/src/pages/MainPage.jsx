@@ -3,6 +3,7 @@ import PlayerDiv from '../utilities/MainPlayers';
 import BottomDivs from '../components/StatsDisplay';
 import ImageComponent from '../components/ImageComponent';
 import FriendStats from '../components/FriendStats'
+import SearchBar from '../components/SearchBar';
 
 export default function MainPage(){
 
@@ -10,25 +11,27 @@ export default function MainPage(){
 
     
     return (
-        <>
+        <> 
+            {/* < SearchBar 
+            /> */}
 
             <div className="bottom-stats">
-                {animalsList.map((player, index) => 
+                {/* {animalsList.map((player, index) => 
                     <FriendStats
-                       
+                        key={index} 
                         selectedPlayer={player}
                     />
-                )}
-            {/* <PlayerDiv
-                players={animalsList}
-                renderPlayer={(playerData, index) => (
-                    <BottomDivs
-                        key={index}
-                        stats={playerData}
-                    />
+                )} */}
+            <PlayerDiv
+                    players={animalsList}
+                    renderPlayer={(playerData, index) => (
+                        <BottomDivs
+                            key={index}
+                            stats={playerData}
+                        />
                     
                 )}
-            /> */}
+            />
             </div>
         </>
     )

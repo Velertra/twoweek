@@ -8,6 +8,11 @@ const SearchBar = () => {
     const [playerData, setPlayerData] = useState([]);
     const [searchStatus, setSearchStatus] = useState(true)
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('checkagain');
+    }
+
     function handleChange(e){
         setText(e.target.value);
     }
@@ -19,7 +24,8 @@ const SearchBar = () => {
                 setPlayerData(playerResults.data);
                 setSearchStatus(false);
                 setShowDiv(true);
-                setText('');
+                setText('');   
+                console.log('check')
             }
         } catch(error){
             setSearchStatus(true)
@@ -28,12 +34,16 @@ const SearchBar = () => {
     
     return ( 
         <>
+        <form onSubmit={handleSubmit}>
+            <label htmlFor="search-bar"></label>
             <input
                 id="search-bar"
                 value={text}
                 onChange={handleChange}
                 onKeyDown={handleKeyDown}
             />
+            <button type='submit' style={{ display: 'none' }}></button>
+        </form>
             <div>
                 {showDiv ? (
                     <div>

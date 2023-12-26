@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import PlayersNewDiv from '../utilities/MainPlayers'
 
 export default function DivsWithTheStats({stats, searchStatus}){
-    console.log(searchStatus)
     return (
         <>
             {!searchStatus ? <div className={'player-stats'}>
