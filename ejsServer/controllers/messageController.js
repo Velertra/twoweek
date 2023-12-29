@@ -3,13 +3,12 @@ const Message = require('../model/message');
 const chatController = {};
 
 const createNewMessage = async (req, res) => {
-    const { body, sender, receiver } = req.body;
+    const { body, name } = req.body;
 
     try {
         const newMessage = new Message({
             body: body,
-            sender: sender,
-            receiver: receiver,
+            name: name,
         });
 
         await newMessage.save();
@@ -22,13 +21,13 @@ const createNewMessage = async (req, res) => {
 };
 
 const getAllMessages = async (req, res) => {
-    const { sender, receiver } = req.params;
+    const { name, receiver } = req.params;
 
     try {
         const messages = await Message.find({
             $or: [
-                { sender: sender, receiver: receiver },
-                { sender: receiver, receiver: sender },
+                { name: name, receiver: receiver },
+                { name: receiver, receiver: name },
             ],
         }).sort({ createdAt: 'asc' });
 
