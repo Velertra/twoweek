@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const chatController = require('../controllers/messageController');
+const messageController = require('../controllers/messageController');
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     res.send('Server side')
-    /* try {
-        const allMessages = await chatController.getAllMessagesFromDatabase();
+  /*   try {
+        const allMessages = await messageController.getAllMessages();
         res.json({ messages: allMessages });
     } catch (error) {
         console.error('Error fetching messages:', error);
@@ -13,10 +13,10 @@ router.get('/', (req, res) => {
     } */
 })
 
-router.post('/messages', chatController.createNewMessage);
+router.post('/messages', messageController.createNewMessage);
 
-router.get('/:sender/:receiver', chatController.getAllMessages);
+router.get('/messages', messageController.getAllMessages);
 
-router.delete('/:id', chatController.deleteMessage);
+router.delete('/:id', messageController.deleteMessage);
 
 module.exports = router;

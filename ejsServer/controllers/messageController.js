@@ -21,16 +21,15 @@ const createNewMessage = async (req, res) => {
 };
 
 const getAllMessages = async (req, res) => {
-    const { name, receiver } = req.params;
 
     try {
-        const messages = await Message.find({
+        /* const messages = await Message.find({
             $or: [
-                { name: name, receiver: receiver },
-                { name: receiver, receiver: name },
+                { name: name, body: body },
+                { name: body, body: name },
             ],
-        }).sort({ createdAt: 'asc' });
-
+        }).sort({ createdAt: 'asc' }); */
+        const messages = await Message.find();
         res.json({ messages: messages });
     } catch (error) {
         console.error('Error fetching messages:', error);

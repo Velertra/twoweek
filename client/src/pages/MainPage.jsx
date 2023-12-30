@@ -4,6 +4,7 @@ import BottomDivs from '../components/StatsDisplay';
 import ImageComponent from '../components/ImageComponent';
 import FriendStats from '../components/FriendStats'
 import SearchBar from '../components/SearchBar';
+import DisplayMessages from '../components/DisplayMessages';
 
 export default function MainPage(){
 
@@ -14,6 +15,7 @@ export default function MainPage(){
         <> 
             {/* < SearchBar 
             /> */}
+            <DisplayMessages />
 
             <div className="bottom-stats">
                 {/* {animalsList.map((player, index) => 

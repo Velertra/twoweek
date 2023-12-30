@@ -9,7 +9,7 @@ const ChatForm = () => {
 
     // Send a POST request to add a message
     try {
-      const response = await fetch('http://localhost:3000/messages', {
+      const response = await fetch('http://localhost:3200/messages', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -24,20 +24,20 @@ const ChatForm = () => {
       setMessage('');
       setName('');
     } catch (error) {
-      console.error('Error adding message:', error);
+      console.error('Error adding message:', error); 
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} /* className='new-message' id='new-message' */>
       <label>
         Name:
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+        <input className='name-input' id='name-input' type="text" value={name} onChange={(e) => setName(e.target.value)} />
       </label>
       <br />
       <label>
         Message:
-        <input type="text" value={message} onChange={(e) => setMessage(e.target.value)} />
+        <input className='message-input' id='message-input' type="text" value={message} onChange={(e) => setMessage(e.target.value)} />
       </label>
       <br />
       <button type="submit">Send Message</button>
