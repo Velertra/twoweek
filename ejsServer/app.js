@@ -16,7 +16,7 @@ main().catch((err) => console.log(err));
 
 async function main() {
     try {
-      await mongoose.connect(mongoURI);
+      await mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
       
       const db = mongoose.connection;
 
