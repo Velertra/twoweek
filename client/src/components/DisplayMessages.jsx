@@ -5,7 +5,7 @@ const DisplayMessages = () => {
 
     useEffect(() => {
         async function getMessages(messages){
-            const response = await fetch(`http://localhost:3200/messages`)
+            const response = await fetch(import.meta.env.PORT || "http://localhost:3200/messages")
             const data = await response.json();
             setMessages(data.messages)
         }
