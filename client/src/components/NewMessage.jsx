@@ -7,9 +7,8 @@ const ChatForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Send a POST request to add a message
     try {
-      const response = await fetch('http://localhost:3200/messages', {
+      const response = await fetch(`http://${import.meta.env.PORT}` || 'http://localhost:3200/messages', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -20,7 +19,6 @@ const ChatForm = () => {
       const data = await response.json();
       console.log(data);
 
-      // Clear the input fields after submitting
       setMessage('');
       setName('');
     } catch (error) {
