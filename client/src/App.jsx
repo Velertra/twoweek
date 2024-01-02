@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import MainPage from './pages/MainPage'
-import { Link } from 'react-router-dom'
-import SearchBar from './components/SearchBar'
-import ChatForm from './components/NewComp'
+import React, { useEffect, useState } from 'react';
+import MainPage from './pages/MainPage';
+import { Link } from 'react-router-dom';
+import SearchBar from './components/SearchBar';
 
 export default function App() {
   return (
@@ -11,7 +10,6 @@ export default function App() {
         <Link to="fullstats">Full Stats</Link>
       </nav>
       <SearchBar/>
-      <ChatForm />
       <MainPage />
 
     </>

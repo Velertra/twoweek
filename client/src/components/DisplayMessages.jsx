@@ -15,17 +15,17 @@ const DisplayMessages = () => {
 
     return ( 
         <>
-            <ul>
+            <div className='text-area' id='text-area'>
                 {console.log(messages)}
                 {messages ? messages.map((message, index) => (
-                    <li key={index}>
-                        {message.body}
-                        
-                    </li>
+                    <div className={`message-${index} messages`} id={`message-${index} messages`} key={index}>
+                        <h3 className={`name-${index}`} id={`name-${index}`}>{message.name}</h3>
+                        <p className={`sms-${index}`} id={`sms-${index}`}>{message.body}</p>
+                    </div>
                 ))
                 :
-                <div>didntwork</div>}
-            </ul>
+                <div></div>}
+            </div>
         </>
      );
 }
