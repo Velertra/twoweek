@@ -8,7 +8,7 @@ const ChatForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(import.meta.env.PORT || 'http://localhost:3200/messages', {
+      const response = await fetch(import.meta.env.VITE_PORT_URL || 'http://localhost:3200/messages', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
