@@ -11,7 +11,7 @@ const DisplayMessages = () => {
             console.log(data)
             setMessages(data.messages)
         }
-        return (() => getMessages())
+        getMessages()
         
     }, [])
 
