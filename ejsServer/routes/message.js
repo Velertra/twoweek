@@ -3,7 +3,7 @@ const router = express.Router();
 const messageController = require('../controllers/messageController');
 
 router.get('/', async (req, res) => {
-    res.send('Server side')
+    res.send('server side')
   /*   try {
         const allMessages = await messageController.getAllMessages();
         res.json({ messages: allMessages });

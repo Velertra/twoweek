@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from 'react';
+/* import { dotenv } from 'dotenv'; */
+
+
+
+console.log(import.meta.env.VITE_PORT_URL)
+
+
+
 
 const DisplayMessages = () => {
     const [messages, setMessages] = useState([]);
 
     useEffect(() => {
         async function getMessages(messages){
-            const response = await fetch(import.meta.env.PORT || "http://localhost:3200/messages")
+            const response = await fetch(import.meta.env.VITE_PORT_URL /* || "http://localhost:3200/messages" */)
             const data = await response.json();
             setMessages(data.messages)
         }
