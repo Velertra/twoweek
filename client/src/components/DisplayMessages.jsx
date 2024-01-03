@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 
 const DisplayMessages = () => {
     const [messages, setMessages] = useState([]);
+    const railwayURL = import.meta.env.VITE_PORT_URL;
 
     useEffect(() => {
         async function getMessages(messages){
-            const response = await fetch(import.meta.env.VITE_PORT_URL /* || "http://localhost:3200/messages" */)
+            const response = await fetch( railwayURL /* || "http://localhost:3200/messages" */)
             const data = await response.json();
             console.log(data)
             setMessages(data.messages)
