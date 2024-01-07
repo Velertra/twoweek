@@ -27,18 +27,18 @@ const ChatForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} /* className='new-message' id='new-message' */>
+    <form onSubmit={handleSubmit} className='message-form' id='message-form'>
       <label>
         Name:
         <input className='name-input' id='name-input' type="text" value={name} onChange={(e) => setName(e.target.value)} />
       </label>
-      <br />
+      
       <label>
         Message:
         <input className='message-input' id='message-input' type="text" value={message} onChange={(e) => setMessage(e.target.value)} />
       </label>
-      <br />
-      <button type="submit">Send Message</button>
+      
+      <button className='message-btn' id='message-btn' type="submit">Send</button>
     </form>
   );
 };

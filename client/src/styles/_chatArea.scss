@@ -3,14 +3,32 @@
 }
  */
 
+.chat-section{
+    width: 35vh;
+}
+
 .text-area{
     height: 16vh;
     overflow-y: scroll;
 }
 
+.message-form{
+    display: flex;
+}
+
+.name-input,
+.message-input{
+    width: 10vh;
+}
+
 h3{
     font-size: 1vh;
 }
- p{
+
+p{
     font-size: 1.5vh;
- }
+}
+
+.message-btn{
+    height: 4vh;
+}

@@ -44,7 +44,7 @@ const SearchBar = () => {
             />
             <button type='submit' style={{ display: 'none' }}></button>
         </form>
-            <div>
+            <div className='pop-up-stat' id='pop-up-stat'>
                 {showDiv ? (
                     <div>
                         <StatsDisplay 
