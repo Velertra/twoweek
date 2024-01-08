@@ -8,5 +8,5 @@ const AnotherPage = () => {
         </>
      );
 }
- 
+
 export default AnotherPage;

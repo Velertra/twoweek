@@ -9,7 +9,6 @@ export default function App() {
       <nav>
         <Link to="fullstats">Full Stats</Link>
       </nav>
-    
       <MainPage />
 
     </>

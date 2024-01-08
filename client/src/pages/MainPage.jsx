@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import PlayerDiv from '../utilities/MainPlayers';
-import BottomDivs from '../components/StatsDisplay';
+import MainPlayers from '../utilities/MainPlayers';
+import StatsDisplay from '../components/StatsDisplay';
 import FriendStats from '../components/FriendStats'
 import DisplayMessages from '../components/DisplayMessages';
 import ChatForm from '../components/NewMessage';
@@ -8,7 +8,7 @@ import SearchBar from '../components/SearchBar';
 
 export default function MainPage(){
 
-    const animalsList = ["M_Mcflyyy", "shaepods", "stilreign", "buckwildhobbit"];
+    const animalsList = ["M_Mcflyyy", "shaepods", "stilreign", "mypotterisharry", "buckwildhobbit"];
 
     return (
         <> 
@@ -18,11 +18,10 @@ export default function MainPage(){
                 <ChatForm />
             </div>
             <div className="bottom-stats">
-
-                <PlayerDiv
+                <MainPlayers
                     players={animalsList}
                     renderPlayer={(playerData, index) => (
-                        <BottomDivs
+                        <StatsDisplay
                             key={index}
                             stats={playerData}
                         />

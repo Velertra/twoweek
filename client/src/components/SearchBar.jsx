@@ -34,16 +34,16 @@ const SearchBar = () => {
     
     return ( 
         <>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="search-bar"></label>
-            <input
-                id="search-bar"
-                value={text}
-                onChange={handleChange}
-                onKeyDown={handleKeyDown}
-            />
-            <button type='submit' style={{ display: 'none' }}></button>
-        </form>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="search-bar"></label>
+                <input
+                    id="search-bar"
+                    value={text}
+                    onChange={handleChange}
+                    onKeyDown={handleKeyDown}
+                />
+                <button type='submit' style={{ display: 'none' }}></button>
+            </form>
             <div className='pop-up-stat' id='pop-up-stat'>
                 {showDiv ? (
                     <div>

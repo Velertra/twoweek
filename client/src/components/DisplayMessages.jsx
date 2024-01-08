@@ -21,8 +21,8 @@ const DisplayMessages = () => {
                 {/* {console.log(messages)} */}
                 {messages ? messages.map((message, index) => (
                     <div className={`message-${index} messages`} id={`message-${index} messages`} key={index}>
-                        <h3 className={`name-${index}`} id={`name-${index}`}>{message.name}</h3>
-                        <p className={`sms-${index}`} id={`sms-${index}`}>{message.body}</p>
+                        <h3 className={`name-${index} user-name`} id={`name-${index} user-name`}>{message.name}</h3>
+                        <p className={`sms-${index} sms`} id={`sms-${index} sms`}>{message.body}</p>
                     </div>
                 ))
                 :
