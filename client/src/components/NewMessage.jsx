@@ -20,8 +20,6 @@ const ChatForm = () => {
       );
 
       const data = await response.json();
-      console.log(data);
-
       setMessage("");
       setName("");
     } catch (error) {

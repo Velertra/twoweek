@@ -11,8 +11,6 @@ export default function MainPage() {
     "M_Mcflyyy",
     "shaepods",
     "stilreign",
-    "mypotterisharry",
-    "buckwildhobbit",
   ];
 
   return (

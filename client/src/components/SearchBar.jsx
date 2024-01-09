@@ -10,7 +10,6 @@ const SearchBar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("checkagain");
   };
 
   function handleChange(e) {
@@ -25,7 +24,6 @@ const SearchBar = () => {
         setSearchStatus(false);
         setShowDiv(true);
         setText("");
-        console.log("check");
       }
     } catch (error) {
       setSearchStatus(true);

@@ -10,7 +10,6 @@ const DisplayMessages = () => {
         railwayURL /* || "http://localhost:3200/messages" */,
       );
       const data = await response.json();
-      console.log(data);
       setMessages(data.messages);
     }
     getMessages();
@@ -19,7 +18,6 @@ const DisplayMessages = () => {
   return (
     <>
       <div className="text-area" id="text-area">
-        {/* {console.log(messages)} */}
         {messages ? (
           messages.map((message, index) => (
             <div

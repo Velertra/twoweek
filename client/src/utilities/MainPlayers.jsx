@@ -17,7 +17,6 @@ export default function FriendStats({ renderPlayer, players }) {
       fetchPlayerData(player).then((playerData) => {
         setData([...data, playerData]);
         setcurrentPlayer(currentPlayer + 1);
-        console.log(data);
       });
     }
   }, [currentPlayer]);
