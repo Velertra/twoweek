@@ -1,4 +1,4 @@
-//api to call for  stats of select player, 
+//api to call for  stats of select player,
 export default async function getPlayerStats(player) {
   const apiKey = import.meta.env.VITE_REACT_APP_TWOWEEK_KEY;
 
@@ -9,13 +9,13 @@ export default async function getPlayerStats(player) {
         headers: {
           Authorization: apiKey,
         },
-      });
+      },
+    );
     if (response.ok) {
       const playerStats = await response.json();
-      return playerStats
+      return playerStats;
     }
-  }
-  catch {
+  } catch {
     //error.log(Error, "this is a no go on the api home boy")
   }
 }

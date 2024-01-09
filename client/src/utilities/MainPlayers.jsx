@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import ApiFunction from '../utilities/ApiFunction'; 
+import { useState, useEffect } from "react";
+import ApiFunction from "../utilities/ApiFunction";
 
 //call renderPlayer to enter your own return. lets you pull the data for any player then return any render
 export default function FriendStats({ renderPlayer, players }) {
@@ -17,7 +17,7 @@ export default function FriendStats({ renderPlayer, players }) {
       fetchPlayerData(player).then((playerData) => {
         setData([...data, playerData]);
         setcurrentPlayer(currentPlayer + 1);
-        console.log(data)
+        console.log(data);
       });
     }
   }, [currentPlayer]);
@@ -32,12 +32,8 @@ export default function FriendStats({ renderPlayer, players }) {
 
     return () => clearTimeout(timer);
   }, [currentPlayer]);
-  
+
   return (
-    <>
-      {data.map((playerData, index) => (
-        renderPlayer(playerData, index)
-      ))}
-    </>
+    <>{data.map((playerData, index) => renderPlayer(playerData, index))}</>
   );
 }

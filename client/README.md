@@ -1,4 +1,3 @@
-
 Certainly! Here's the updated README with the correct instructions:
 
 TwoWeek (Game Data) README
@@ -13,10 +12,9 @@ run in client side:
 
 This command will automatically download and install the necessary packages for your project.
 
-then run: 
+then run:
 
 "npm run dev"
-
 
 To start the development server, run the following command on server side:
 

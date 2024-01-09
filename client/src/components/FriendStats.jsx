@@ -1,25 +1,23 @@
-import { useEffect, useState } from 'react';
-import ApiFunction from '../utilities/ApiFunction'
+import { useEffect, useState } from "react";
+import ApiFunction from "../utilities/ApiFunction";
 
 const FriendStats = ({ selectedPlayer }) => {
-    const [data, setData] = useState('')
-    
-    useEffect(() => {
-      const timer = setTimeout(() => {
+  const [data, setData] = useState("");
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
       const getPlayerData = async () => {
-         
         const playerData = await fetchPlayerData(selectedPlayer);
-        
-          setData((previous) =>  [...previous, playerData.duo]);
-          console.log(data)
-         
-      }
+
+        setData((previous) => [...previous, playerData.duo]);
+        console.log(data);
+      };
     }, 2000);
 
-      return () => clearTimeout(timer); 
-    }, [selectedPlayer])
+    return () => clearTimeout(timer);
+  }, [selectedPlayer]);
 
-/*     useEffect(() => {
+  /*     useEffect(() => {
       console.log('check')
       const timer = setTimeout(() => {
         if (currentPlayer < players.length) {
@@ -30,19 +28,21 @@ const FriendStats = ({ selectedPlayer }) => {
       return () => clearTimeout(timer);
     }, [currentPlayer]); */
 
-    const fetchPlayerData = async (player) => {
-      const response = await ApiFunction(player);
-      console.log(response.data.stats.all)
-     
-      return response.data.stats.all;
-      };
+  const fetchPlayerData = async (player) => {
+    const response = await ApiFunction(player);
+    console.log(response.data.stats.all);
 
-    return ( 
-      <>
-        {/* selectedPlayer ? Object.values(data).map((stats, index) => <p key={index}>{stats}</p>)
-        : */ <div>not working, come back later</div>}
-      </>
-     );
-}
- 
+    return response.data.stats.all;
+  };
+
+  return (
+    <>
+      {
+        /* selectedPlayer ? Object.values(data).map((stats, index) => <p key={index}>{stats}</p>)
+        : */ <div>not working, come back later</div>
+      }
+    </>
+  );
+};
+
 export default FriendStats;
