@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+//import io from 'socket.io-client';
 
 const ChatForm = () => {
   const [message, setMessage] = useState("");
@@ -9,17 +10,21 @@ const ChatForm = () => {
 
     try {
       const response = await fetch(
-        import.meta.env.VITE_PORT_URL || "http://localhost:3200/messages",
+        "http://localhost:3200/messages" || import.meta.env.VITE_PORT_URL,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ body: message, name: name }),
+          body: JSON.stringify({ 
+            body: message, 
+            name: name 
+          }),
         },
       );
-
+      
       const data = await response.json();
+        
       setMessage("");
       setName("");
     } catch (error) {
