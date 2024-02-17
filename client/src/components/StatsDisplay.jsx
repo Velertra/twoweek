@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import PlayersNewDiv from "../utilities/MainPlayers";
 
-export default function DivsWithTheStats({ stats, searchStatus }) {
+export default function FullStats({ stats, searchStatus }) {
   return (
     <>
       {!searchStatus ? (
@@ -30,4 +30,4 @@ export default function DivsWithTheStats({ stats, searchStatus }) {
       )}
     </>
   );
-}
+};

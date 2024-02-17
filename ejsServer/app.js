@@ -4,8 +4,6 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var cors = require("cors");
-//var http = require('http');
-//var socketIo = require('socket.io')
 
 var routes = require("./routes/message");
 var mongoDb = require("./model/db");

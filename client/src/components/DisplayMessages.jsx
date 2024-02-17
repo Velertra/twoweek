@@ -7,7 +7,7 @@ const DisplayMessages = () => {
   useEffect(() => {
     async function getMessages(messages) {
       const response = await fetch(
-        /* railwayURL ||  */"http://localhost:3200/messages",
+        railwayURL || "http://localhost:3200/messages",
       );
       const data = await response.json();
       setMessages(data.messages);

@@ -1,26 +1,57 @@
 import React, { useEffect, useState } from "react";
 import MainPage from "./pages/MainPage";
 import { Link } from "react-router-dom";
-//cqimport {io} from 'socket.io-client';
+import { io } from "socket.io-client";
+import { socket } from "./socket"
+import { ConnectionState } from "./components/ConnectionState";
+import { Events } from "./components/Events"
+import { ConnectionManager } from "./components/ConnectionManager";
+import { MyForm } from "./components/MyForm";
 
 export default function App() {
-  /* const socket = io();
+  const [isConnected, setIsConnected] = useState(socket.connected);
+  const [fooEvents, setFooEvents] = useState([]);
+  //const server = io.connect('http://localhost:4000')
   
   useEffect(() => {
-    socket.on('connect', () => {
-        console.log('Connected to server');
-    });
+    function onConnect() {
+      setIsConnected(true);
+      console.log('connected')
+    }
 
-    socket.on('disconnect', () => {
-        console.log('Disconnected from server');
-    });
-}, []); */
+    function onDisconnect() {
+      setIsConnected(false);
+      console.log('disconnected')
+    }
+
+    function onFooEvent(value) {
+      setFooEvents(previous => [...previous, value]);
+      console.log('foo event')
+    }
+
+    socket.on('hello', onConnect);
+    socket.on('disconnect', onDisconnect);
+    socket.on('foo', onFooEvent);
+
+    return () => {
+      socket.off('hello', onConnect);
+      socket.off('disconnect', onDisconnect);
+      socket.off('foo', onFooEvent);
+    };
+  }, []);
+
 
   return (
     <>
-      <nav>
+      <div className="App">
+        <ConnectionState isConnected={ isConnected } />
+        <Events events={ fooEvents } />
+        <ConnectionManager />
+        <MyForm />
+      </div>
+      {/* <nav>
         <Link to="fullstats">Full Stats</Link>
-      </nav>
+      </nav> */}
       <MainPage />
     </>
   );

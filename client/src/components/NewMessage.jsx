@@ -10,7 +10,7 @@ const ChatForm = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:3200/messages" || import.meta.env.VITE_PORT_URL,
+        "http://localhost:3200/messages" /* || import.meta.env.VITE_PORT_URL */,
         {
           method: "POST",
           headers: {

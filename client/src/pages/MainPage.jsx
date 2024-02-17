@@ -5,6 +5,7 @@ import FriendStats from "../components/FriendStats";
 import DisplayMessages from "../components/DisplayMessages";
 import ChatForm from "../components/NewMessage";
 import SearchBar from "../components/SearchBar";
+import MiniStats from "../components/MiniStats";
 
 export default function MainPage() {
   const animalsList = [
@@ -24,7 +25,8 @@ export default function MainPage() {
         <MainPlayers
           players={animalsList}
           renderPlayer={(playerData, index) => (
-            <StatsDisplay key={index} stats={playerData} />
+            /* <StatsDisplay key={index} stats={playerData} /> */
+            <MiniStats key={index} stats={playerData}/>
           )}
         />
       </div>
