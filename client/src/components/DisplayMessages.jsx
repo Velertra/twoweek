@@ -10,6 +10,12 @@ const DisplayMessages = () => {
     async function getMessages(messages) {
       const response = await fetch(
         url,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
       );
       const data = await response.json();
       setMessages(data.messages);
