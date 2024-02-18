@@ -16,7 +16,7 @@ require("dotenv").config();
 mongoDb()
 
 app.use(cors({
-    origin: 'forgot this one',
+    origin: 'https://twoweek.vercel.app',
     methods: ["GET", "POST"]
 }));
 app.use(logger("dev"));
