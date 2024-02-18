@@ -27,7 +27,7 @@ var server = http.createServer(app);
 
 var io = require('../socket')(server, {
   cors: {
-    origin: 'https://twoweek.vercel.app',
+    origin: 'anotherone',
     methods: ["GET", "POST"]
   }
 });
