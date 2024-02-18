@@ -9,10 +9,12 @@ const ChatForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSavedName(true);
-    //sanitizeText(message, name);
+    const url = import.meta.env.VITE_NODE === 'production' ? import.meta.env.VITE_PORT_URL : 'http://localhost:3200/messages';
+    
+    
     try {
       const response = await fetch(
-        "http://localhost:3200/messages" || import.meta.env.VITE_PORT_URL,
+        url,
         {
           method: "POST",
           headers: {

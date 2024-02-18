@@ -16,6 +16,7 @@ var io = require('../socket');
  */
 
 var port = normalizePort(process.env.PORT || "3200");
+
 app.set("port", port);
 
 /**
@@ -24,13 +25,7 @@ app.set("port", port);
 
 var server = http.createServer(app);
 
-io.listen('4000');
-
-/* io.on('connection', (socket) => {
-  socket.on('newMsg', (msg) => {
-    io.emit('newMsg', msg);
-  })
-}) */
+io.listen(process.env.PORT || '4000');
 
 /**
  * Listen on provided port, on all network interfaces.

@@ -4,12 +4,12 @@ import { socket } from '../socket'
 const DisplayMessages = () => {
   const [messages, setMessages] = useState([]);
   const [newMsg, setNewMsg] = useState()
-  const railwayURL = import.meta.env.VITE_PORT_URL;
+  const url = import.meta.env.VITE_NODE === 'production' ? import.meta.env.VITE_PORT_URL : 'http://localhost:3200/messages';
 
   useEffect(() => {
     async function getMessages(messages) {
       const response = await fetch(
-        "http://localhost:3200/messages" || railwayURL,
+        url,
       );
       const data = await response.json();
       setMessages(data.messages);
