@@ -4,10 +4,11 @@ import { socket } from '../socket';
 const ChatForm = () => {
   const [message, setMessage] = useState("");
   const [name, setName] = useState("");
+  const [savedName, setSavedName] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setSavedName(true);
     try {
       const response = await fetch(
         "http://localhost:3200/messages" /* || import.meta.env.VITE_PORT_URL */,
@@ -23,13 +24,9 @@ const ChatForm = () => {
         },
       );
 
-      socket.emit('newMsg', name, message);
-      
-      
       const data = await response.json();
-        console.log(data)
+      console.log(data)
       setMessage("");
-      setName("");
     } catch (error) {
       console.error("Error adding message:", error);
     }
@@ -37,16 +34,20 @@ const ChatForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="message-form" id="message-form">
-      <label>
-        <input
-          placeholder="name"
-          className="name-input"
-          id="name-input"
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </label>
+      {savedName ? (
+        <p>{name}</p>
+      ) : (
+        <label>
+          <input
+            placeholder="name"
+            className="name-input"
+            id="name-input"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </label>
+      )}
       <label>
         <input
           placeholder="message"

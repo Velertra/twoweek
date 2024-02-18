@@ -22,14 +22,10 @@ const DisplayMessages = () => {
     socket.on('newMsg', (msg) => {
       const newArr = [...messages, msg];
       setMessages(() => newArr);
-      console.log(messages)
     })
-    /* socket.emit('newMsg', name, message);
-    socket.on('newMsg', (msg) => {
-      console.log(msg)
-    }) */
+    
     return () => {
-    socket.off('newMsg');
+      socket.off('newMsg');
     }
   })
 
