@@ -13,7 +13,7 @@ export default function App() {
   const [fooEvents, setFooEvents] = useState([]);
   //const server = io.connect('http://localhost:4000')
   
-  useEffect(() => {
+  /* useEffect(() => {
     function onConnect() {
       setIsConnected(true);
       console.log('connected')
@@ -30,15 +30,15 @@ export default function App() {
     }
 
     socket.on('hello', onConnect);
-    socket.on('disconnect', onDisconnect);
+    socket.on('disco', onDisconnect);
     socket.on('foo', onFooEvent);
 
     return () => {
       socket.off('hello', onConnect);
-      socket.off('disconnect', onDisconnect);
+      socket.off('disco', onDisconnect);
       socket.off('foo', onFooEvent);
     };
-  }, []);
+  }, []); */
 
 
   return (

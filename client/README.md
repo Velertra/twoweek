@@ -22,15 +22,6 @@ To start the development server, run the following command on server side:
 
 npm run devstart
 
-Running Locally 
-    "Error adding Message"
-
-    -in the NewMessage.jsx file i had to delete that add back any part of the function in order for it to run.
-
-    <del>Make sure to comment out the Vite Url on the client side in NewMessage.jsx file(line 12)</del>
-
-<del>Otherwise needs a url for the server.</del>
-
 
 
 Follow these steps to set up MongoDB:

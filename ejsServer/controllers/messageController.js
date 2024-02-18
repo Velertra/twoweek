@@ -1,4 +1,5 @@
 const Message = require("../model/message");
+const io = require("../socket");
 
 const chatController = {};
 
@@ -12,6 +13,12 @@ const createNewMessage = async (req, res) => {
     });
 
     await newMessage.save();
+    io.emit('newMsg', newMessage)
+
+    //io.on('connection', (socket) => {
+      //socket.emit('newMsg', newMessage)
+      //console.log(newMessage)
+    //})
 
     res.json({ message: "Message created successfully" });
   } catch (error) {
@@ -19,6 +26,11 @@ const createNewMessage = async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
+
+//io.on('connection', (socket) => {
+  //socket.emit('newMsg', createNewMessage)
+  //console.log(newMessage)
+//})
 
 const getAllMessages = async (req, res) => {
   try {

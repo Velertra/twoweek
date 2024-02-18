@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import io from 'socket.io-client';
+import { socket } from '../socket';
 
 const ChatForm = () => {
   const [message, setMessage] = useState("");
@@ -22,9 +22,12 @@ const ChatForm = () => {
           }),
         },
       );
+
+      socket.emit('newMsg', name, message);
+      
       
       const data = await response.json();
-        
+        console.log(data)
       setMessage("");
       setName("");
     } catch (error) {
