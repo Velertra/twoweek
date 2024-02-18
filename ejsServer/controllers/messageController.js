@@ -1,6 +1,7 @@
 const Message = require("../model/message");
-const io = require("../socket");
+const io = require("../bin/www");
 
+console.log(io)
 const chatController = {};
 
 const createNewMessage = async (req, res) => {
