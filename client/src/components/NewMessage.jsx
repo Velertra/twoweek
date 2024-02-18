@@ -9,17 +9,18 @@ const ChatForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSavedName(true);
+    //sanitizeText(message, name);
     try {
       const response = await fetch(
-        "http://localhost:3200/messages" /* || import.meta.env.VITE_PORT_URL */,
+        "http://localhost:3200/messages" || import.meta.env.VITE_PORT_URL,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ 
-            body: message, 
-            name: name 
+            body: sanitizeText(message), 
+            name: sanitizeText(name) 
           }),
         },
       );
@@ -31,6 +32,19 @@ const ChatForm = () => {
       console.error("Error adding message:", error);
     }
   };
+
+  function sanitizeText(result){
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#x27',
+        "/": '&#;',
+    }
+    const reg = /[&<>"'/]/ig;
+    return result.replace(reg, (match) => (map[match]));
+  }
 
   return (
     <form onSubmit={handleSubmit} className="message-form" id="message-form">
@@ -45,6 +59,7 @@ const ChatForm = () => {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            required
           />
         </label>
       )}
@@ -56,6 +71,7 @@ const ChatForm = () => {
           type="text"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
+          required
         />
       </label>
       <button className="message-btn" id="message-btn" type="submit">

@@ -33,7 +33,7 @@ const SearchBar = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="search-bar"></label>
+        <label htmlFor="search-bar">Full Stats </label>
         <input
           id="search-bar"
           value={text}
