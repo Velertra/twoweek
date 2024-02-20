@@ -3,7 +3,7 @@ import { socket } from '../socket'
 
 const DisplayMessages = () => {
   const [messages, setMessages] = useState([]);
-  const [newMsg, setNewMsg] = useState()
+  
   const url = import.meta.env.VITE_NODE === 'production' ? import.meta.env.VITE_PORT_URL : 'http://localhost:3200/messages';
 
   useEffect(() => {

@@ -7,6 +7,7 @@
 var app = require("../app");
 var debug = require("debug")("minichat:server");
 var http = require("http");
+var { server } = require('../socket');
 
 
 //const ServerForSocket = require('socket.io')
@@ -23,14 +24,15 @@ app.set("port", port);
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+//var server = http.createServer(app);
 
-var io = require('../socket')(server, {
+
+/* var io = require('../socket')(server, {
   cors: {
-    origin: 'https://twoweek.vercel.app',
+    origin: 'https://twoweek.vercel.app' || 'http://localhost:5173',
     methods: ["GET", "POST"]
   }
-});
+}); */
 
 
 /**
@@ -96,5 +98,3 @@ function onListening() {
   var bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
   debug("Listening on " + bind);
 }
-
-module.export = io;

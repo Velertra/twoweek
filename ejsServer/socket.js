@@ -1,13 +1,26 @@
-var io = require("socket.io");
-/* require("dotenv").config();
+const { Server } = require("socket.io");
+const http = require("http");
+const express = require('express');
 
-const origin = process.env.PROD_ENV === 'production' ? "https://twoweek.vercel.app/" : "http://localhost:5173";
+const app = express();
 
-const io = new Server({
-    cors: {
-      origin: origin
-    }
-    
-  }); */
-  
-module.exports = io;
+const server = http.createServer(app);
+
+const origin = process.env.PROD_ENV === 'production' ?  'https://twoweek.vercel.app' : 'http://localhost:5173';
+
+const io = new Server(server, {
+  cors:{
+    origin: origin,
+    methods: ["GET", "POST"]
+  }
+});
+
+io.on('connection', (socket) => {
+  console.log("user connected");
+
+  socket.on('disonnect', () => {
+    console.log("user disconnected")
+  })
+});
+
+module.exports = {app, server, io};
