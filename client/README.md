@@ -16,11 +16,11 @@ This command will automatically download and install the necessary packages for 
 
 then run:
 
-    $ npm run dev
+   $ npm run dev
 
 To start the development server, run the following command on server side:
 
-npm run devstart
+   $ npm run server
 
 
 

@@ -8,27 +8,13 @@ import SearchBar from "../components/SearchBar";
 import MiniStats from "../components/MiniStats";
 
 export default function MainPage() {
-  const animalsList = [
-    "M_Mcflyyy",
-    "shaepods",
-    "stilreign",
-  ];
 
   return (
     <>
-      <SearchBar />
       <div className="chat-section" id="chat-section">
         <DisplayMessages />
+        
         <ChatForm />
-      </div>
-      <div className="bottom-stats">
-        <MainPlayers
-          players={animalsList}
-          renderPlayer={(playerData, index) => (
-            /* <StatsDisplay key={index} stats={playerData} /> */
-            <MiniStats key={index} stats={playerData}/>
-          )}
-        />
       </div>
     </>
   );

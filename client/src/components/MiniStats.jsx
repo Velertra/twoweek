@@ -1,4 +1,5 @@
 const MiniStats = ({ stats }) => {
+
     return (
         <>
             <div style={{width: "25vh"}} id="stats-container">

@@ -1,55 +1,27 @@
-import { useState } from "react";
-import StatsDisplay from "./StatsDisplay";
-import ApiFunction from "../utilities/ApiFunction";
+import { useNavigate } from "react-router-dom";
+
 
 const SearchBar = () => {
-  const [text, setText] = useState("");
-  const [showDiv, setShowDiv] = useState(false);
-  const [playerData, setPlayerData] = useState([]);
-  const [searchStatus, setSearchStatus] = useState(true);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
-  function handleChange(e) {
-    setText(e.target.value);
-  }
+  const navigate = useNavigate();
 
   async function handleKeyDown(e) {
-    try {
       if (e.key === "Enter") {
-        const playerResults = await ApiFunction(text);
-        setPlayerData(playerResults.data);
-        setSearchStatus(false);
-        setShowDiv(true);
-        setText("");
+        e.preventDefault();
+        navigate(`search/${e.target.value}`)
       }
-    } catch (error) {
-      setSearchStatus(true);
-    }
   }
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="search-bar">Full Stats </label>
+      <form >
+        <label htmlFor="search">{''}</label>
         <input
-          id="search-bar"
-          value={text}
-          onChange={handleChange}
+          id="search"
+          name="search"
           onKeyDown={handleKeyDown}
         />
         <button type="submit" style={{ display: "none" }}></button>
       </form>
-      <div className="pop-up-stat" id="pop-up-stat">
-        {showDiv ? (
-          <div>
-            <StatsDisplay stats={playerData} searchStatus={searchStatus} />
-            <button onClick={() => setShowDiv(false)}>close</button>
-          </div>
-        ) : null}
-      </div>
     </>
   );
 };

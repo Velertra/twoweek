@@ -1,6 +1,6 @@
-const Message = require("../model/message");
+//delete for new signin
+const Message = require("../model/tempMessage")
 const { io } = require("../socket");
-//console.log(io)
 
 const chatController = {};
 
@@ -23,15 +23,16 @@ const createNewMessage = async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
+ 
 
 const getAllMessages = async (req, res) => {
   try {
-    /* const messages = await Message.find({
-            $or: [
-                { name: name, body: body },
-                { name: body, body: name },
-            ],
-        }).sort({ createdAt: 'asc' }); */
+    //const messages = await Message.find({
+    //        $or: [
+    //            { name: name, body: body },
+    //            { name: body, body: name },
+    //        ],
+    //    }).sort({ createdAt: 'asc' });
     const messages = await Message.find();
     res.json({ messages: messages });
   } catch (error) {
@@ -58,3 +59,52 @@ module.exports = {
   getAllMessages,
   deleteMessage,
 };
+
+
+
+//new message controller for signin
+/* const Conversation = require('../model/conversationModel')
+const Message = require('../model/messageModel')
+
+const sendMessage = async (req, res) => {
+    try{
+      const {message} = req.body;
+      const {id: receiverId } = req.params;
+      const senderId = req.user._id;
+
+      let conversation = await Conversation.findOne({
+        participants: { $all: [senderId, receiverId] }
+      })
+
+      if(!conversation) {
+        conversation = await Conversation.create({
+          participants: [senderId, receiverId],
+        
+        })
+      }
+
+      const newMessage = new Message({
+        senderId,
+        receiverId,
+        message,
+      })
+
+      if(newMessage) {
+        conversation.messages.push(newMessage._id);
+      }
+
+      //await conversation.save();
+      //await newMessage.save();
+
+      await Promise.all([conversation.save(), newMessage.save()]);
+
+      res.status(201).json(newMessage)
+
+    } catch {
+      console.log("Error in sendMessage controller: ", error.message);
+      res.status(500).json({ error: "Internal server error"});
+    }
+  
+};
+
+module.exports = sendMessage; */

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import ApiFunction from "../utilities/ApiFunction";
 
 //call renderPlayer to enter your own return. lets you pull the data for any player then return any render
-export default function FriendStats({ renderPlayer, players }) {
+export default function MainPlayers({ renderPlayer, players }) {
   const [currentPlayer, setcurrentPlayer] = useState(0);
   const [data, setData] = useState([]);
 
