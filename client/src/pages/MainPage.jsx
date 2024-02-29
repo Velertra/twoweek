@@ -6,8 +6,14 @@ import DisplayMessages from "../components/DisplayMessages";
 import ChatForm from "../components/NewMessage";
 import SearchBar from "../components/SearchBar";
 import MiniStats from "../components/MiniStats";
+import BlogDisplay from "../components/BlogDisplay";
+import trackerApi from "../utilities/trackerApi";
 
 export default function MainPage() {
+
+  useEffect(() => {
+    trackerApi();
+  },[])
 
   return (
     <>
@@ -16,6 +22,7 @@ export default function MainPage() {
         
         <ChatForm />
       </div>
+      <BlogDisplay />
     </>
   );
 }

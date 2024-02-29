@@ -9,6 +9,7 @@ import NavBar from "../components/NavBar";
 import SearchPlayer from "../pages/SearchPlayer";
 import FriendStats from "../pages/FriendStats";
 import Leaderboards from "../pages/Leaderboards";
+import Article from "../pages/Article";
 
 
 const Router = () => {
@@ -19,6 +20,7 @@ const Router = () => {
           { path: "about", element: <About />},
           { path: "leaderboards", element: <Leaderboards />},
           { path: "search/:player", element: <SearchPlayer />},
+          { path: "article/:articleId", element: <Article />},
           { path: "123", element: <FriendStats />}     
         ]
     }
