@@ -1,0 +1,64 @@
+.itemshop-bg{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.item-section{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vw;
+    justify-content: center;
+    width: 80%;
+} 
+
+.full-item-img{
+    display: grid;
+    position: relative;
+    margin-top: 10vh;
+
+}
+
+.main-item-img{
+    position: relative;
+    height: 24vw;
+    
+}
+
+.item-details{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.item-name{
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    font-size: 1.5vh;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.price-line{
+    display: flex;
+    background-color: black;
+    justify-content: flex-end;
+    gap: 0.5vw;
+}
+
+.price{
+    font-size: 1.8vh;
+    font-weight: bold;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+}
+
+.vbucksImg{
+    width: 3vw;
+    height: 3vw;
+}

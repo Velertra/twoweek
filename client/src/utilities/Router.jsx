@@ -8,8 +8,8 @@ import About from "../pages/About";
 import NavBar from "../components/NavBar";
 import SearchPlayer from "../pages/SearchPlayer";
 import FriendStats from "../pages/FriendStats";
-import Leaderboards from "../pages/Leaderboards";
 import Article from "../pages/Article";
+import ItemShop, { loader as itemLoader} from "../pages/ItemShop";
 
 
 const Router = () => {
@@ -18,7 +18,7 @@ const Router = () => {
         children: [
           { index:true, element: <MainPage />},
           { path: "about", element: <About />},
-          { path: "leaderboards", element: <Leaderboards />},
+          { path: "itemShop", element: <ItemShop />, loader: itemLoader},
           { path: "search/:player", element: <SearchPlayer />},
           { path: "article/:articleId", element: <Article />},
           { path: "123", element: <FriendStats />}     

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ApiFunction from "../utilities/ApiFunction";
+import {getPlayerStats} from "../utilities/ApiFunction";
 
 const FriendStats = ({ selectedPlayer }) => {
   const [data, setData] = useState("");
@@ -29,7 +29,7 @@ const FriendStats = ({ selectedPlayer }) => {
     }, [currentPlayer]); */
 
   const fetchPlayerData = async (player) => {
-    const response = await ApiFunction(player);
+    const response = await getPlayerStats(player);
     console.log(response.data.stats.all);
 
     return response.data.stats.all;

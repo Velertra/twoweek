@@ -57,6 +57,8 @@ require("dotenv").config();
 
 const origin = process.env.PROD_ENV === 'production' ?  'https://twoweek.vercel.app' : 'http://localhost:5173';
 
+
+
 mongoDb()
 
 app.use(cors({

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ApiFunction from "../utilities/ApiFunction";
+import { getPlayerStats } from "../utilities/ApiFunction";
 
 //call renderPlayer to enter your own return. lets you pull the data for any player then return any render
 export default function MainPlayers({ renderPlayer, players }) {
@@ -7,7 +7,7 @@ export default function MainPlayers({ renderPlayer, players }) {
   const [data, setData] = useState([]);
 
   const fetchPlayerData = async (player) => {
-    const response = await ApiFunction(player);
+    const response = await getPlayerStats(player);
     return response.data;
   };
 

@@ -18,6 +18,7 @@ const SearchBar = () => {
         <input
           id="search"
           name="search"
+          placeholder="Enter your EPIC name..."
           onKeyDown={handleKeyDown}
         />
         <button type="submit" style={{ display: "none" }}></button>

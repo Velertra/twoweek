@@ -1,5 +1,10 @@
 @import "chatArea";
 @import "stats";
+@import "itemShop";
+
+*{
+  box-sizing: border-box;
+}
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -17,7 +22,4 @@
   -webkit-text-size-adjust: 100%;
 }
 
-img {
-  height: 100px;
-  width: 100px;
-}
+
