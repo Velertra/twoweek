@@ -11,7 +11,6 @@ import FriendStats from "../pages/FriendStats";
 import Article from "../pages/Article";
 import ItemShop, { loader as itemLoader} from "../pages/ItemShop";
 
-
 const Router = () => {
   const router = createBrowserRouter([
     { path: "/", element: <NavBar />, errorElement: <ErrorPage />,
