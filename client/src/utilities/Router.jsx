@@ -18,10 +18,10 @@ const Router = () => {
         children: [
           { index:true, element: <MainPage />},
           { path: "about", element: <About />},
-          { path: "itemShop", element: <ItemShop />, loader: itemLoader},
-          { path: "search/:player", element: <SearchPlayer />},
           { path: "article/:articleId", element: <Article />},
-          { path: "123", element: <FriendStats />}     
+          { path: "123", element: <FriendStats />},     
+          { path: "itemShop", element: <ItemShop />, loader: itemLoader},
+          { path: "search/:player", element: <SearchPlayer />}
         ]
     }
   ]);
