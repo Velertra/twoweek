@@ -1,30 +1,26 @@
 .chat-section {
-  width: 35vh;
+  width: 90%;
+  height: 135px;
+}
+
+.chat-title{
+  border-bottom: 1px solid rgb(152, 152, 152);
+  padding-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 .text-area {
-  height: 16vh;
+  height: 90%;
   overflow-y: scroll;
+  border-bottom: 1px solid rgb(152, 152, 152);
+  
+  margin-bottom: 10px;
 }
 
-.message-form {
-  display: flex;
-}
 
-.name-input,
-.message-input {
-  width: 10vh;
-}
 
-.user-name {
-  font-size: 1.5vh;
-  font-weight: 1000;
-}
-
-.sms {
-  font-size: 1.5vh;
-}
-
-.message-btn {
-  height: 4vh;
+@media (min-width: 800px){
+  .chat-section {
+    width: 700px;
+  }
 }

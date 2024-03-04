@@ -5,8 +5,9 @@ const Article = () => {
     const { articleId } = useParams()
 
     return (
-        <div className="App">
+        <div className="main-content">
           {jsonData.map((text, index) => (
+            
             <div key={index}>
             {(text.blogTitle).includes(articleId) ? 
             <>

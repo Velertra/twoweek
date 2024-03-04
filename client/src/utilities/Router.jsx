@@ -1,11 +1,14 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+
+import NavBar from "../components/NavBar";
+import Footer from "../components/SiteFooter";
+
 //pages
 import ErrorPage from "../pages/error-page";
 import MainPage from "../pages/MainPage";
 import About from "../pages/About";
-import NavBar from "../components/NavBar";
 import SearchPlayer from "../pages/SearchPlayer";
 import FriendStats from "../pages/FriendStats";
 import Article from "../pages/Article";

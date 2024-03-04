@@ -22,7 +22,6 @@ const SearchPlayer = () => {
         
             if(!abortController.signal.aborted) {
                 let data = await response;
-                
                 setplayerData(data);
             }
         }
@@ -30,7 +29,6 @@ const SearchPlayer = () => {
         if(player) {
         getPlayerData();
         }
-        
 
         return() => {
             abortController.abort();

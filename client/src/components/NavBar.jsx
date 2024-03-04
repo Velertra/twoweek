@@ -1,8 +1,10 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import PageBottom from "./SiteFooter";
 
 const NavBar = () => {
     return ( 
+        <>
         <header>
             <nav>
                 <h1>TwoWeek</h1>
@@ -11,8 +13,14 @@ const NavBar = () => {
                 <NavLink to='itemShop'>ItemShop</NavLink>
                 <NavLink to='about'>about</NavLink>
             </nav>
-            <Outlet />
         </header>
+        <main>
+            <Outlet />
+        </main>
+        <footer>
+            <PageBottom />
+        </footer>
+        </>
      );
 }
  

@@ -1,10 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { socket } from '../socket'
 
 const DisplayMessages = () => {
   const [messages, setMessages] = useState([]);
+  const chatScroll = useRef(null);
   
   const url = import.meta.env.VITE_NODE === 'production' ? import.meta.env.VITE_PORT_URL : 'http://localhost:3200/messages';
+
+  useEffect(() => {
+    //if (chatScroll.current) {
+      chatScroll.current.scrollTop = chatScroll.current.scrollHeight;
+    //}
+  }, [messages])
 
   useEffect(() => {
     async function getMessages(messages) {
@@ -39,7 +46,8 @@ const DisplayMessages = () => {
 
   return (
     <>
-      <div className="text-area" id="text-area">
+      <div className="chat-title">Convo</div>
+      <div className="text-area" id="text-area" ref={chatScroll}>
         {messages ? (
           messages.map((message, index) => (
             <div

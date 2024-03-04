@@ -48,37 +48,39 @@ const ChatForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="message-form" id="message-form">
-      {savedName ? (
-        <p>{name}</p>
-      ) : (
+    <div className="compose-message">
+        <form onSubmit={handleSubmit} className="message-form" id="message-form">
+        {savedName ? (
+          <p className="name-input">{name}</p>
+        ) : (
+          <label>
+            <input
+              placeholder="name"
+              className="name-input"
+              id="name-input"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </label>
+        )}
         <label>
           <input
-            placeholder="name"
-            className="name-input"
-            id="name-input"
+            placeholder="message"
+            className="message-input"
+            id="message-input"
             type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             required
           />
         </label>
-      )}
-      <label>
-        <input
-          placeholder="message"
-          className="message-input"
-          id="message-input"
-          type="text"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          required
-        />
-      </label>
-      <button className="message-btn" id="message-btn" type="submit">
-        Send
-      </button>
-    </form>
+        <button className="message-btn" id="message-btn" type="submit">
+          Send
+        </button>
+      </form>
+    </div>
   );
 };
 
