@@ -2,9 +2,29 @@
 @import "stats";
 @import "itemShop";
 @import "hpContent";
+@import "article";
 
 *{
-  box-sizing: border-box;
+  margin: 0;
+  color: white;
+}
+
+a:link, a:visited, a:hover, a:active{
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(27, 27, 27);
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(64, 64, 64);
+  border-radius: 15px;
 }
 
 :root {
@@ -20,37 +40,83 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* height: 100%; */
 }
 
-.page-content{
+.bg-full{
+  position: relative;
+  bottom: 50px;
+  height: 400px;
+  background-image: url("https://i.ytimg.com/vi/CyNEgibVmDQ/sddefault.jpg");
+  background-repeat: no-repeat;
+  background-size: 100vw 620px; 
+  z-index: -1;
+}
+
+.bg-full::before{
+  content: '';
+  position: absolute;
+  top: 77px;
+  left: 0;
+  width: 100%;
+  height: 325px;
+  background-color: rgba(69, 0, 69, 0.855);
+}
+
+header{
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  justify-content: flex-end;
+  height: 50px;
+  
+}
+
+.nav-div{
+  display: flex;
+  
   justify-content: space-between;
 }
 
+.nav-links{
+  width: 500px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.site-title{
+  
+}
+
 main{
-  height: 80ex
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: rgb(27, 27, 27);
-  border-radius: 15px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgb(64, 64, 64);
-  border-radius: 15px; /* Rounded corners */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main-content{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.compose-message{
+  height: 200px;
+}
+
+footer{
+  background-color: rgb(21, 21, 21);
+  position: relative;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.site-footer{
+  margin-top: 1rem;
 }

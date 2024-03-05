@@ -6,8 +6,6 @@ import Router from "./utilities/Router";
 export default function App() {
 
   return (
-    <div className="page-content">
       <Router />
-    </div>
   );
 }

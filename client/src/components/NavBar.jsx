@@ -5,21 +5,28 @@ import PageBottom from "./SiteFooter";
 const NavBar = () => {
     return ( 
         <>
-        <header>
-            <nav>
-                <h1>TwoWeek</h1>
-                <SearchBar />
-                <NavLink to='/'>Home</NavLink>
-                <NavLink to='itemShop'>ItemShop</NavLink>
-                <NavLink to='about'>about</NavLink>
-            </nav>
-        </header>
-        <main>
-            <Outlet />
-        </main>
-        <footer>
-            <PageBottom />
-        </footer>
+            <header>
+                <nav>
+                    <div className="nav-div">
+                        <div className="title-div">
+                            <NavLink to='/'><h1 className="site-title">Two-Week</h1></NavLink>
+                        </div>
+                        <div className="nav-links">
+                            <SearchBar />
+                            <NavLink to='/'>Home</NavLink>
+                            <NavLink to='itemShop'>ItemShop</NavLink>
+                            <NavLink to='about'>about</NavLink>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div className="bg-full"></div>
+            <main>
+                <Outlet />
+            </main>
+            <footer>
+                <PageBottom />
+            </footer>
         </>
      );
 }
