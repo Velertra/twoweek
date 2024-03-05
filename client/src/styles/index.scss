@@ -50,7 +50,7 @@ a:link, a:visited, a:hover, a:active{
 .bg-full{
   position: relative;
   bottom: 50px;
-  height: 400px;
+  height: 40vw;
   background-image: url("https://i.ytimg.com/vi/CyNEgibVmDQ/sddefault.jpg");
   background-repeat: no-repeat;
   background-size: 100vw 620px; 
@@ -63,7 +63,7 @@ a:link, a:visited, a:hover, a:active{
   top: 77px;
   left: 0;
   width: 100%;
-  height: 325px;
+  height:32vw;
   background-color: rgba(69, 0, 69, 0.855);
 }
 
@@ -72,23 +72,24 @@ header{
   flex-direction: column;
   justify-content: flex-end;
   height: 50px;
-  
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .nav-div{
   display: flex;
-  
-  justify-content: space-between;
+  justify-content: space-around;
+  margin-bottom: -25px;
+  gap: 10px;
 }
 
 .nav-links{
   width: 500px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
+  gap: 15px;
 }
-.site-title{
-  
-}
+
 
 main{
   height: 100%;
@@ -119,4 +120,10 @@ footer{
 
 .site-footer{
   margin-top: 1rem;
+}
+
+@media (max-width: 500px){
+  .nav-links{
+    flex-direction: column;
+  }
 }

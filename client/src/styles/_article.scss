@@ -3,11 +3,14 @@
 }
 
 .article-imgs{
-    height: 30vh;
+    height: 400px;
+    width: fit-content;
     
 }
 
 .article-content{
     width: 80%;
+    display: flex;
+    flex-direction: column;
     
 }

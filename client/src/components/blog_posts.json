@@ -166,6 +166,64 @@
             }
         ],
         "img3": ""
+    },
+    {
+        
+        "blogTitle": "Tracker Network Changelog February 2024",
+        "data": "March 01, 2024",
+        "author": "Andrea Memoli",
+        "headerImage": "https://imgsvc.trackercdn.com/url/size(1280x720),fit(cover),quality(100)/https%3a%2f%2ftrackercdn.com%2fghost%2fimages%2f2024%2f3%2f11248_article_trn-feb-24-update_1280x720.png/image.png",
+        "content1": [
+            {
+                "title": "Highlights:",
+                "paragraph": "We were excited to introduce a brand new, major feature on Fortnite Tracker. The Replays Viewer!"
+            },
+            {
+                "title": "",
+                "paragraph": "A brand new way of checking your Fortnite stats on a deeper level. Loadouts, full roster stats, performance and the works. There is a lot to cover with this one, so you can check more details about it here."
+            },
+            {
+                "title": "",
+                "paragraph": ""
+                
+            }
+        ],
+        "img1": "https://trackercdn.com/ghost/images/2024/3/11118_15139_image.png",
+        "content2": [
+            {
+                "title": "Jungle Timers Feature Now Live on League Tracker App",
+                "paragraph": "One of the most beloved and awaited features we received requests for is the Jungle Timers feature on the mini-map."
+            },
+            {
+                "title": "",
+                "paragraph": "Well, this month we released an update with that, among other improvements to make the app even better. It will also adapt to different sizes of the mini-map based on your preferences. Doesn't matter if you are a Jungler or ADC, you will always know when the next dragon comes next."
+            },
+            {
+                "title": "",
+                "paragraph": "Being on top of everything that happens in the match is now even better and easier with the Leaguer Tracker app." 
+            },
+            {
+                "title": "",
+                "paragraph": "Get more details and download our PC app for League of Legends here."
+            }
+        ],
+        "img2": "https://trackercdn.com/ghost/images/2024/3/11122_image%20(39).png",
+        "content3": [
+            {
+                "title": "Everything Else Across Tracker Network:",
+                "paragraph": ""
+            },
+            {
+                "title": "Web:",
+                "paragraph": "[General] You can now click on nicknames in profiles to copy to clipboard. \n [General] Improved viewability of pages and dropdown mechanism on mobile \nweb."
+    
+            },
+            {
+                "title": "",
+                "paragraph": "" 
+            }
+        ],
+        "img3": ""
     }
 ]
 

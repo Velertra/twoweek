@@ -9,14 +9,17 @@ const NavBar = () => {
                 <nav>
                     <div className="nav-div">
                         <div className="title-div">
-                            <NavLink to='/'><h1 className="site-title">Two-Week</h1></NavLink>
+                            
+                            <NavLink to='/'><h1 className="site-title">TwoWeek</h1></NavLink>
+                            
                         </div>
-                        <div className="nav-links">
+                        <div className="search-bar">
                             <SearchBar />
-                            <NavLink to='/'>Home</NavLink>
-                            <NavLink to='itemShop'>ItemShop</NavLink>
-                            <NavLink to='about'>about</NavLink>
                         </div>
+                            <div className="nav-links">
+                                <NavLink to='itemShop'>Item Shop</NavLink>
+                                <NavLink to='about'>About</NavLink>
+                            </div>
                     </div>
                 </nav>
             </header>

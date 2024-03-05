@@ -41,4 +41,26 @@ async function itemShop() {
   }
 }
 
-export { getPlayerStats, itemShop }
+async function fortniteNews() {
+  const apiKey = import.meta.env.VITE_REACT_APP_TWOWEEK_KEY;
+
+  try {
+    const response = await fetch(
+      `https://fortnite-api.com/v2/news`,
+      {
+        headers: {
+          Authorization: apiKey,
+        },
+      },
+    );
+    if (response.ok) {
+      const news = await response.json();
+      console.log(news)
+      return news;
+    }
+  } catch {
+    //error.log(Error, "this is a no go on the api home boy")
+  }
+}
+
+export { getPlayerStats, itemShop, fortniteNews }
