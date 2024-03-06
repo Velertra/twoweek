@@ -49,8 +49,18 @@ a:link, a:visited, a:hover, a:active{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow-x: hidden;
-  /* height: 100%; */
+}
+
+.site-title{
+  font-size: 2em;
+  font-style: italic;
+  font-weight: 900;
+}
+
+.nav-link{
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 900;
 }
 
 .bg-full{
@@ -85,6 +95,7 @@ header{
 .nav-div{
   display: flex;
   justify-content: space-around;
+  align-items: flex-end;
   margin-bottom: -25px;
   gap: 10px;
 }

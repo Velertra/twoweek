@@ -17,8 +17,8 @@ const NavBar = () => {
                             <SearchBar />
                         </div>
                             <div className="nav-links">
-                                <NavLink to='itemShop'>Item Shop</NavLink>
-                                <NavLink to='about'>About</NavLink>
+                                <NavLink className="nav-link" to='itemShop'>Item Shop</NavLink>
+                                <NavLink className="nav-link" to='about'>About</NavLink>
                             </div>
                     </div>
                 </nav>
