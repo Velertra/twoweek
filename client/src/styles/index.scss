@@ -10,6 +10,10 @@
   color: white;
 }
 
+html, body{
+  overflow-x: hidden;
+}
+
 a:link, a:visited, a:hover, a:active{
   text-decoration: none;
 }
@@ -45,6 +49,7 @@ a:link, a:visited, a:hover, a:active{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-x: hidden;
   /* height: 100%; */
 }
 
@@ -103,6 +108,7 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .compose-message{
