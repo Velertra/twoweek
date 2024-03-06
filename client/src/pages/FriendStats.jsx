@@ -12,7 +12,12 @@ const FriendStats = () => {
         <MainPlayers
           players={animalsList}
           renderPlayer={(playerData, index) => (
-            <MiniStats key={index} stats={playerData}/>
+            <div>
+              <h2>{playerData.account.name}</h2>
+              <MiniStats key={index} stats={playerData} brType="solo"/>
+              <MiniStats key={index} stats={playerData} brType="duo"/>
+              <MiniStats key={index} stats={playerData} brType="squad"/>
+            </div>
           )}
         />
       </div>

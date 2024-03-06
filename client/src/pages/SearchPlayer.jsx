@@ -22,10 +22,11 @@ const SearchPlayer = () => {
         
             if(!abortController.signal.aborted) {
                 let data = await response;
+                console.log(data)
                 setplayerData(data);
             }
         }
-    
+
         if(player) {
         getPlayerData();
         }
@@ -33,13 +34,35 @@ const SearchPlayer = () => {
         return() => {
             abortController.abort();
         }
-
     }, [player])
 
     return ( 
-        <>
-        {playerData ? <MiniStats stats={playerData.data} /> : <div>{error ? "No Stats to show" : "Loading..."}</div>}
-        </>
+        <div className="main-content">
+        {playerData 
+        ? 
+        <div className="stats-display">
+            <h2 className="player-name">{playerData.data.account.name}</h2>
+            <h3>Level {playerData.data.battlePass.level}</h3>
+            <div className="multi-stats-display">
+                <MiniStats
+
+                    stats={playerData.data}
+                    brType='solo'
+                /> 
+                <MiniStats
+                    stats={playerData.data}
+                    brType='duo'
+                /> 
+                <MiniStats
+                    stats={playerData.data}
+                    brType='squad'
+                />
+            </div>
+        
+        </div>
+        : 
+        <div>{error ? "No Stats to show" : "Loading..."}</div>}
+        </div>
      );
 }
  

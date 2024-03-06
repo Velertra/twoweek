@@ -17,17 +17,6 @@ const FriendStats = ({ selectedPlayer }) => {
     return () => clearTimeout(timer);
   }, [selectedPlayer]);
 
-  /*     useEffect(() => {
-      console.log('check')
-      const timer = setTimeout(() => {
-        if (currentPlayer < players.length) {
-          setcurrentPlayer(currentPlayer + 1);
-        }
-      }, 2000);
-  
-      return () => clearTimeout(timer);
-    }, [currentPlayer]); */
-
   const fetchPlayerData = async (player) => {
     const response = await getPlayerStats(player);
     console.log(response.data.stats.all);

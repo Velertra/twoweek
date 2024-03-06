@@ -5,8 +5,6 @@ import { fortniteNews } from "../utilities/ApiFunction";
 
 export default function MainPage() {
 
-  fortniteNews()
-
   return (
     <div className="main-content">
       <BlogDisplay />
