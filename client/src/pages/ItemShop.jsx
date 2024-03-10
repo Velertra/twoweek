@@ -12,13 +12,6 @@ export async function loader() {
 const ItemShop = () => {
   const { items } = useLoaderData()
   const [itemNumber, setItemNumber] = useState()
-  
-  useEffect(() => {
-
-    
-    console.log(items)
-
-}, [])
 
   return (
     <div className='itemshop-bg'>

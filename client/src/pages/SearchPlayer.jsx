@@ -22,7 +22,7 @@ const SearchPlayer = () => {
         
             if(!abortController.signal.aborted) {
                 let data = await response;
-                console.log(data)
+
                 setplayerData(data);
             }
         }

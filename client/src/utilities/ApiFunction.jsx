@@ -55,7 +55,6 @@ async function fortniteNews() {
     );
     if (response.ok) {
       const news = await response.json();
-      console.log(news)
       return news;
     }
   } catch {

@@ -10,7 +10,6 @@ const FriendStats = ({ selectedPlayer }) => {
         const playerData = await fetchPlayerData(selectedPlayer);
 
         setData((previous) => [...previous, playerData.duo]);
-        console.log(data);
       };
     }, 2000);
 
@@ -19,7 +18,6 @@ const FriendStats = ({ selectedPlayer }) => {
 
   const fetchPlayerData = async (player) => {
     const response = await getPlayerStats(player);
-    console.log(response.data.stats.all);
 
     return response.data.stats.all;
   };
