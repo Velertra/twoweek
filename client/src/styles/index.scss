@@ -86,22 +86,28 @@ a:link, a:visited, a:hover, a:active{
 header{
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   height: 50px;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 .nav-div{
+  position: fixed;
+  background: black;
   display: flex;
-  justify-content: space-around;
   align-items: flex-end;
-  margin-bottom: -25px;
-  gap: 10px;
+  /* padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px; */
+  /* margin-bottom: -25px; */
+  width: 100%;
+  z-index: 9999;
+}
+
+.nav-div div{
+  padding: 10px;
 }
 
 .nav-links{
-  width: 500px;
   display: flex;
   justify-content: flex-end;
   gap: 15px;
@@ -143,6 +149,9 @@ footer{
 @media (max-width: 500px){
   .nav-links{
     flex-direction: column;
+  }
+  #search{
+    width: 25vw;
   }
   .bg-full{
     height: 300px;
