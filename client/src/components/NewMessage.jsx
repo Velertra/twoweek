@@ -10,7 +10,6 @@ const ChatForm = () => {
     setSavedName(true);
     const url = import.meta.env.VITE_NODE === 'production' ? import.meta.env.VITE_PORT_URL : 'http://localhost:3200/messages';
     
-    
     try {
       const response = await fetch(
         url,

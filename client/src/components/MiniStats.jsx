@@ -1,41 +1,42 @@
 const MiniStats = ({ stats, brType }) => {
     const data = stats.stats.all[brType];
 
+   
     function capitalize([ first='', ...rest ]){
         return [ first.toUpperCase(), ...rest ].join('');
     }
 
     return (
         <>
-            <div className="stats-container" id="stats-container">
+            <div className="stats-container" id="stats-container">{console.log(data)}
                 <h3 className="br-type">{capitalize(brType)}</h3>
                 <div>
-                    <text className="profile-stats-label">KD</text>
-                    <text className="profile-stats-value">{data.kd}</text>
+                    <p className="profile-stats-label">KD</p>
+                    <p className="profile-stats-value">{data.kd}</p>
                 </div>
                 <div>
-                    <text className="profile-stats-label">Kills</text>
-                    <text className="profile-stats-value">{data.kills}</text>
+                    <p className="profile-stats-label">Kills</p>
+                    <p className="profile-stats-value">{data.kills}</p>
                 </div>
                 <div>
-                    <text className="profile-stats-label">Matches</text>
-                    <text className="profile-stats-value">{data.matches}</text>
+                    <p className="profile-stats-label">Matches</p>
+                    <p className="profile-stats-value">{data.matches}</p>
                 </div>
                 <div>
-                    <text className="profile-stats-label">Mins played</text>
-                    <text className="profile-stats-value">{data.minutesPlayed}</text>
+                    <p className="profile-stats-label">Mins played</p>
+                    <p className="profile-stats-value">{data.minutesPlayed}</p>
                 </div>
                 <div>
-                    <text className="profile-stats-label">Score</text>
-                    <text className="profile-stats-value">{data.score}</text>
+                    <p className="profile-stats-label">Score</p>
+                    <p className="profile-stats-value">{data.score}</p>
                 </div>
                 <div>
-                    <text className="profile-stats-label">Kills</text>
-                    <text className="profile-stats-value">{data.kills}</text>
+                    <p className="profile-stats-label">Kills</p>
+                    <p className="profile-stats-value">{data.kills}</p>
                 </div>
                 <div>
-                    <text className="profile-stats-label">Wins</text>
-                    <text className="profile-stats-value">{data.wins}</text>
+                    <p className="profile-stats-label">Wins</p>
+                    <p className="profile-stats-value">{data.wins}</p>
                 </div>
             </div>
         </>

@@ -45,7 +45,6 @@ const SearchPlayer = () => {
             <h3>Level {playerData.data.battlePass.level}</h3>
             <div className="multi-stats-display">
                 <MiniStats
-
                     stats={playerData.data}
                     brType='solo'
                 /> 

@@ -62,4 +62,26 @@ async function fortniteNews() {
   }
 }
 
-export { getPlayerStats, itemShop, fortniteNews }
+async function getPlayerStatsV2(player) {
+  const apiKey = import.meta.env.VITE_TWOWEEK_IO_KEY;
+
+  try {
+    const response = await fetch(
+      `https://api.fortnitetracker.com/v1/powerrankings/console/NAE/M_Mcflyyy`,
+      {
+        headers: {
+          Authorization: apiKey,
+        },
+      },
+    );
+    if (response.ok) {
+      const playerStats = await response.json();
+      console.log(playerStats)
+      return playerStats;
+    }
+  } catch {
+    //error.log(Error, "this is a no go on the api home boy")
+  }
+}
+
+export { getPlayerStats, itemShop, fortniteNews, getPlayerStatsV2 }
