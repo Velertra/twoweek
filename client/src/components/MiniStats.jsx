@@ -1,6 +1,5 @@
 const MiniStats = ({ stats, brType }) => {
     const data = stats.stats.all[brType];
-
    
     function capitalize([ first='', ...rest ]){
         return [ first.toUpperCase(), ...rest ].join('');
@@ -8,7 +7,7 @@ const MiniStats = ({ stats, brType }) => {
 
     return (
         <>
-            <div className="stats-container" id="stats-container">{console.log(data)}
+            <div className="stats-container" id="stats-container">
                 <h3 className="br-type">{capitalize(brType)}</h3>
                 <div>
                     <p className="profile-stats-label">KD</p>

@@ -76,7 +76,6 @@ async function getPlayerStatsV2(player) {
     );
     if (response.ok) {
       const playerStats = await response.json();
-      console.log(playerStats)
       return playerStats;
     }
   } catch {
