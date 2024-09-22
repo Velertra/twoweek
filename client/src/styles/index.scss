@@ -160,9 +160,20 @@ footer{
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 870px){
+  .bg-full{
+    margin-left: 100px;
+    margin-right: 100px;
+    background-size: 100% 620px; 
+  }
+}
+
+@media (min-width: 1200px) {
   .bg-full{
     height: 500px;
+    margin-left: 200px;
+    margin-right: 200px;
+    background-size: 100% 620px; 
   }
   .bg-full::before{
     height: 425px;
